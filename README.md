@@ -40,7 +40,7 @@ return swapper;
 To get started locally:
 
 ```bash
-git clone https://github.com/sysnormal1/default-data-swap.git
+git clone https://github.com/sysnormal1/java-default-data-swap.git
 cd default-data-swap
 mvn install
 ```
