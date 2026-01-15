@@ -1,7 +1,6 @@
 package com.sysnormal.libs.commons;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
@@ -17,7 +16,6 @@ import java.util.Objects;
  */
 public class DefaultDataSwap {
 
-    private static final Logger logger = LoggerFactory.getLogger(DefaultDataSwap.class);
 
     /**
      * the success indicative
