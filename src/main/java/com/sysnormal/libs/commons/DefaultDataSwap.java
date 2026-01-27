@@ -59,6 +59,11 @@ public class DefaultDataSwap {
     }
 
     public ResponseEntity<DefaultDataSwap> sendHttpResponse() {
-        return this.success ? ResponseEntity.status(HttpStatus.OK).body(this) : ResponseEntity.status(Objects.requireNonNullElse(this.httpStatusCode, HttpStatus.INTERNAL_SERVER_ERROR.value())).body(this);
+        try {
+            return this.success ? ResponseEntity.status(HttpStatus.OK).body(this) : ResponseEntity.status(Objects.requireNonNullElse(this.httpStatusCode, HttpStatus.INTERNAL_SERVER_ERROR.value())).body(this);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new DefaultDataSwap(false, e.getMessage()));
+        }
     }
 }
