@@ -50,6 +50,10 @@ public class DefaultDataSwap {
     }
 
     public void setException(Exception exception) {
+        System.out.println("setting exception");
+        if (Objects.nonNull(exception)) {
+            exception.printStackTrace();
+        }
         this.success = false;
         this.httpStatusCode = Objects.requireNonNullElse(this.httpStatusCode, HttpStatus.INTERNAL_SERVER_ERROR.value());
         this.exception = exception;
